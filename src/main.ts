@@ -14,7 +14,14 @@ const nodeImageElement = document.getElementById(
     'nodeImage'
 )! as HTMLImageElement
 
+const alertElement = document.getElementById('alert')! as HTMLDivElement
+const alertButtonElement = document.getElementById(
+    'alertButton'
+)! as HTMLButtonElement
+const projectsElement = document.getElementById('projects')! as HTMLDivElement
+
 let mode: 'light' | 'dark' = 'light'
+let hasShown = false
 
 modeButtonElement.addEventListener('click', () => {
     const iconElement = modeButtonElement.querySelector(
@@ -23,7 +30,7 @@ modeButtonElement.addEventListener('click', () => {
 
     if (mode === 'dark') {
         mode = 'light'
-        iconElement.className = 'fa-solid fa-sun text-sm'
+        iconElement.className = 'fa-solid fa-moon text-sm'
         document.documentElement.className = 'light'
         document.documentElement.dataset.theme = 'cupcake'
         githubImageElement.src =
@@ -33,7 +40,7 @@ modeButtonElement.addEventListener('click', () => {
         nextImageElement.src = '/next-dark.png'
     } else {
         mode = 'dark'
-        iconElement.className = 'fa-solid fa-moon text-sm'
+        iconElement.className = 'fa-solid fa-sun text-sm'
         document.documentElement.className = 'dark'
         document.documentElement.dataset.theme = 'night'
         githubImageElement.src = '/github.png'
@@ -41,4 +48,28 @@ modeButtonElement.addEventListener('click', () => {
             'https://nodejs.org/static/images/logos/nodejs-new-pantone-white.svg'
         nextImageElement.src = '/next.png'
     }
+})
+
+const options = {
+    root: null,
+    threshold: 0.2,
+}
+
+const observer = new IntersectionObserver(
+    (entries: IntersectionObserverEntry[]) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasShown) {
+                hasShown = true
+                alertElement.hidden = false
+            }
+        })
+    },
+    options
+)
+
+observer.observe(projectsElement)
+
+alertButtonElement.addEventListener('click', () => {
+    observer.disconnect()
+    alertElement.hidden = true
 })
