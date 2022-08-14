@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="cupcake">
+<html lang="en" dir="ltr" data-theme="cupcake" class="light">
     <head>
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -25,7 +25,7 @@
         />
         <title>Ali Farajzade: CV</title>
     </head>
-    <body class="rtl:font-fa ltr:font-en p-10 bg-gray-200">
+    <body class="rtl:font-fa ltr:font-en p-10 bg-gray-200 dark:bg-gray-500">
         <div
             class="container bg-white shadow-lg rounded-md overflow-hidden max-w-[1000px]"
         >
@@ -160,9 +160,21 @@
                     </div>
                 </section>
                 <!-- Main -->
-                <main class="col-span-6 p-10 bg-base-100 space-y-12">
+                <main
+                    class="col-span-6 p-10 bg-base-100 flex flex-col gap-12 relative"
+                >
+                    <div class="absolute right-0 top-0 p-5">
+                        <button
+                            id="modeButton"
+                            class="btn btn-outline btn-circle flex justify-center items-center"
+                        >
+                            <i class="fa-solid fa-moon text-sm"></i>
+                        </button>
+                    </div>
                     <div class="space-y-5">
-                        <h1 class="text-lg font-bold uppercase text-sky-700">
+                        <h1
+                            class="text-lg font-bold uppercase text-sky-700 dark:text-sky-500"
+                        >
                             Profile
                         </h1>
                         <p class="text-sm leading-8">
@@ -181,7 +193,9 @@
                         </p>
                     </div>
                     <div class="space-y-10">
-                        <h1 class="text-lg font-bold uppercase text-sky-700">
+                        <h1
+                            class="text-lg font-bold uppercase text-sky-700 dark:text-sky-500"
+                        >
                             Experience
                         </h1>
                         <div class="flex flex-col gap-5">
@@ -195,7 +209,9 @@
                                     <h1 class="text-sm font-semibold">
                                         Senior Front-End Developer
                                     </h1>
-                                    <h3 class="text-gray-500">
+                                    <h3
+                                        class="text-gray-500 dark:text-gray-400"
+                                    >
                                         Working for almost 3 years with hot
                                         technologies.
                                     </h3>
@@ -213,7 +229,9 @@
                                     <h1 class="text-sm font-semibold">
                                         Intermidiate Back-End Developer
                                     </h1>
-                                    <h3 class="text-gray-500">
+                                    <h3
+                                        class="text-gray-500 dark:text-gray-400"
+                                    >
                                         Learning and building projects for 2
                                         years.
                                     </h3>
@@ -231,7 +249,9 @@
                                     <h1 class="text-sm font-semibold">
                                         Linux Enthusiast
                                     </h1>
-                                    <h3 class="text-gray-500">
+                                    <h3
+                                        class="text-gray-500 dark:text-gray-400"
+                                    >
                                         Daily-Driving linux for four years.
                                     </h3>
                                 </div>
@@ -239,7 +259,9 @@
                         </div>
                     </div>
                     <div class="space-y-10">
-                        <h1 class="text-lg font-bold uppercase text-sky-700">
+                        <h1
+                            class="text-lg font-bold uppercase text-sky-700 dark:text-sky-500"
+                        >
                             GitHub Stats
                         </h1>
                         <div class="stats shadow border-2 border-gray-200">
@@ -300,23 +322,29 @@
                         />
                     </div>
                     <div class="space-y-10">
-                        <h1 class="text-lg font-bold uppercase text-sky-700">
+                        <h1
+                            class="text-lg font-bold uppercase text-sky-700 dark:text-sky-500"
+                        >
                             Achievements
                         </h1>
                         <div class="w-full flex flex-col gap-4">
                             <div class="flex gap-6 items-center">
                                 <i
-                                    class="fa-solid fa-trophy text-xl text-gray-600"
+                                    class="fa-solid fa-trophy text-xl text-gray-600 dark:text-gray-400"
                                 ></i>
                                 <div class="flex flex-col">
                                     <a
-                                        class="text-base text-black font-semibold link"
+                                        class="text-base text-black dark:text-gray-300 font-semibold link"
                                         href="https://code-star.ir/"
                                         target="_blank"
                                     >
                                         Code Star Competition Nominee
                                     </a>
-                                    <h3 class="text-gray-500">Star Academy</h3>
+                                    <h3
+                                        class="text-gray-500 dark:text-gray-400"
+                                    >
+                                        Star Academy
+                                    </h3>
                                 </div>
                             </div>
                             <img
@@ -327,10 +355,14 @@
                         </div>
                     </div>
                     <div class="space-y-5">
-                        <h1 class="text-lg font-bold uppercase text-sky-700">
+                        <h1
+                            class="text-lg font-bold uppercase text-sky-700 dark:text-sky-500"
+                        >
                             Tech Stack
                         </h1>
-                        <h3 class="text-sm text-center text-gray-500">
+                        <h3
+                            class="text-sm text-center text-gray-500 dark:text-gray-400"
+                        >
                             Technologies that I'm familiar with:
                         </h3>
                         <div
@@ -370,6 +402,7 @@
                             </div>
                             <div class="flex flex-col items-center gap-2">
                                 <img
+                                    id="nextImage"
                                     class="w-12 object-contain object-center"
                                     src="/next-dark.png"
                                     alt="Next"
@@ -378,6 +411,7 @@
                             </div>
                             <div class="flex flex-col items-center gap-2">
                                 <img
+                                    id="nodeImage"
                                     class="w-12 object-contain object-center"
                                     src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg"
                                     alt="Node"
@@ -462,6 +496,7 @@
                             </div>
                             <div class="flex flex-col items-center gap-2">
                                 <img
+                                    id="githubImage"
                                     class="w-12 object-contain object-center"
                                     src="https://www.svgrepo.com/show/332401/github.svg"
                                     alt="GitHub"
@@ -544,12 +579,16 @@
                                 >
                             </div>
                         </div>
-                        <h3 class="text-sm text-center text-gray-500 block">
+                        <h3
+                            class="text-sm text-center text-gray-500 dark:text-gray-400 block"
+                        >
                             and many more...
                         </h3>
                     </div>
                     <div class="space-y-5">
-                        <h1 class="text-lg font-bold uppercase text-sky-700">
+                        <h1
+                            class="text-lg font-bold uppercase text-sky-700 dark:text-sky-500"
+                        >
                             Projects
                         </h1>
                         <div class="flex flex-col gap-10 items-center">
@@ -589,7 +628,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 dark:text-gray-400">
                                         TypeScript Application Built with React,
                                         Next and TailwindCSS.
                                     </p>
@@ -631,7 +670,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 dark:text-gray-400">
                                         TypeScript Application Built with Node,
                                         Express and MongoDB.
                                     </p>
@@ -681,7 +720,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 dark:text-gray-400">
                                         Full-Stack TypeScript Application Built
                                         with Next, React, Recoil and Chakra UI.
                                     </p>
@@ -729,7 +768,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 dark:text-gray-400">
                                         TypeScript Application Built with React,
                                         Material UI and Sass.
                                     </p>
@@ -777,7 +816,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 dark:text-gray-400">
                                         Vanilla JavaScript MVC-CRUD Application
                                         Built with Sass.
                                     </p>
