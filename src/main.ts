@@ -33,8 +33,7 @@ modeButtonElement.addEventListener('click', () => {
         iconElement.className = 'fa-solid fa-moon text-sm'
         document.documentElement.className = 'light'
         document.documentElement.dataset.theme = 'cupcake'
-        githubImageElement.src =
-            'https://www.svgrepo.com/show/332401/github.svg'
+        githubImageElement.src = '/github-dark.svg'
         nodeImageElement.src =
             'https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg'
         nextImageElement.src = '/next-dark.png'
